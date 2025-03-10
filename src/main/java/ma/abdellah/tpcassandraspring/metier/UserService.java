@@ -1,6 +1,7 @@
 package ma.abdellah.tpcassandraspring.metier;
 
 import ma.abdellah.tpcassandraspring.entities.User;
+import ma.abdellah.tpcassandraspring.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,8 +14,12 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public User CreateUser(String name, String email) {
+    public User createUser(String name, String email) {
         return userRepository.save(new User(UUID.randomUUID(),name,email));
+    }
+
+    public void deleteUser(UUID id) {
+        userRepository.deleteById(id);
     }
 
     public User getUser(UUID uuid){

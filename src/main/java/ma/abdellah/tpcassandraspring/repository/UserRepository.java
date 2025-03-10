@@ -1,4 +1,4 @@
-package ma.abdellah.tpcassandraspring.metier;
+package ma.abdellah.tpcassandraspring.repository;
 
 import ma.abdellah.tpcassandraspring.entities.User;
 import org.springframework.data.cassandra.repository.CassandraRepository;
